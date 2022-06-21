@@ -24,13 +24,13 @@ def main():
       print('Druk op de knop om te beginnen...')
       board.button.wait_for_press()
       print(f"Zeg wat ik moet doen: {', '.join(hints)}")
- 
+
       while True:
         board.led.state = Led.ON
         text = client.recognize(language_code='nl_NL', hint_phrases=hints)
         board.led.state = Led.PULSE_QUICK
         sleep(4)
- 
+
         if text is None:
           print('Ik heb je niet goed verstaan.')
           print('--------')
@@ -45,7 +45,7 @@ def main():
 
         elif 'tot ziens' in text:
           break
- 
+
         print('--------')
  
 if __name__ == '__main__':
