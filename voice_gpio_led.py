@@ -27,7 +27,7 @@ def main():
  
       while True:
         board.led.state = Led.ON
-        text = client.recognize(language_code='nl_NL', hint_phrases=hints) 
+        text = client.recognize(language_code='nl_NL', hint_phrases=hints)
         board.led.state = Led.PULSE_QUICK
         sleep(4)
  
@@ -39,14 +39,14 @@ def main():
         print(f'Je zei: {text}')
         text = text.lower()
         if 'rood' in text:
-          tts.say('I will put the red light on', lang='en-GB') 
+          tts.say('I will put the red light on', lang='en-GB')
           LED_ROOD.on()
 
 
         elif 'tot ziens' in text:
           break
-   
+ 
         print('--------')
-  
+ 
 if __name__ == '__main__':
     main()
